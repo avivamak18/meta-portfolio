@@ -1,31 +1,34 @@
-export default function Portfolio() {
+import StickyNav from "@/components/StickyNav";
+import Section from "@/components/Section";
+import CaseCard from "@/components/CaseCard";
+
+export default function Home() {
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100">
-      {/* Header */}
-      <header className="mx-auto max-w-5xl px-6 py-14">
-        <p className="text-sm tracking-widest text-neutral-400">META CREATIVE STRATEGIST PORTFOLIO</p>
-        <h1 className="mt-3 text-4xl font-semibold">
+      <StickyNav />
+
+      {/* HERO */}
+      <header className="mx-auto max-w-5xl px-6 pt-16 pb-10">
+        <p className="text-sm tracking-widest text-neutral-400">
+          META CREATIVE STRATEGIST PORTFOLIO
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold leading-tight">
           Anas Makouan — Hybrid AI × Reels × Messaging Strategist
         </h1>
-        <p className="mt-4 text-neutral-300 leading-relaxed">
-          Systems-first creative strategist specializing in AI-powered ideation, Reels performance frameworks,
-          and messaging funnel architecture across retail, e-commerce, and lifestyle consumer brands.
+        <p className="mt-4 text-neutral-300 leading-relaxed max-w-3xl">
+          Systems-first creative strategist specializing in AI-powered ideation,
+          Reels performance frameworks, and messaging funnel architecture across
+          retail, e-commerce, and lifestyle consumer brands.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
+          <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#featured">
+            Featured Work
+          </a>
           <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#identity">
             Identity Map
           </a>
-          <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#case1">
-            Case Study 1
-          </a>
-          <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#case2">
-            Case Study 2
-          </a>
-          <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#case3">
-            Case Study 3
-          </a>
-          <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#scripts">
+          <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#reels">
             Reels Scripts
           </a>
           <a className="rounded-2xl bg-white/10 px-4 py-2 text-sm hover:bg-white/15" href="#howiwork">
@@ -34,145 +37,111 @@ export default function Portfolio() {
         </div>
       </header>
 
-      {/* Identity Map */}
-      <section id="identity" className="mx-auto max-w-5xl px-6 py-10 border-t border-white/10">
+      {/* FEATURED WORK GRID */}
+      <Section id="featured" className="mx-auto max-w-5xl px-6 py-10 border-t border-white/10">
+        <h2 className="text-2xl font-semibold">Featured Work</h2>
+        <p className="mt-2 text-neutral-300 max-w-3xl">
+          Case studies built to show systems thinking, creative fluency across Meta surfaces,
+          and AI-assisted ideation at scale.
+        </p>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          <CaseCard
+            number="01"
+            title="AI-Powered Reels Performance System"
+            industry="Retail — Multi-Location Restaurant Brand"
+            outcome="Standardized hook → value → CTA architecture across locations; higher early retention and faster iteration."
+            href="/case-studies/01-reels-system"
+            tags={["Reels", "AI Ideation", "Retail"]}
+          />
+          <CaseCard
+            number="02"
+            title="Messaging Funnel & Content Journey"
+            industry="E-Commerce — DTC Brand"
+            outcome="Mapped hesitation signals into a 4-stage messaging funnel; reduced decision friction and improved journey completion."
+            href="/case-studies/02-messaging-funnel"
+            tags={["Messaging", "DTC", "Journey Design"]}
+          />
+          <CaseCard
+            number="03"
+            title="AI-Assisted Creative Scaling Engine"
+            industry="Lifestyle Consumer Brand — Apparel"
+            outcome="Built an idea-to-format translator system for multi-surface scaling with consistent brand grammar."
+            href="/case-studies/03-scaling-engine"
+            tags={["Scaling", "Apparel", "Cross-format"]}
+          />
+        </div>
+      </Section>
+
+      {/* IDENTITY MAP */}
+      <Section id="identity" className="mx-auto max-w-5xl px-6 py-10 border-t border-white/10">
         <h2 className="text-2xl font-semibold">Creative Strategist Identity Map</h2>
+
         <div className="mt-5 grid gap-6 md:grid-cols-3">
-          <Card title="Archetype" text="Hybrid (AI + Reels + Messaging)" />
-          <Card title="Operating Modes" text="Signal Decoder · Systems Architect · Prototype Builder" />
-          <Card title="Philosophy" text="Systems outperform isolated executions. Ideas should scale, not repeat." />
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p className="text-sm text-neutral-400">Archetype</p>
+            <p className="mt-2 text-lg">Hybrid (AI + Reels + Messaging)</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p className="text-sm text-neutral-400">Operating Modes</p>
+            <p className="mt-2 text-lg">
+              Signal Decoder · Systems Architect · Prototype Builder
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p className="text-sm text-neutral-400">Philosophy</p>
+            <p className="mt-2 text-lg">
+              Systems outperform isolated executions. Ideas should scale, not repeat.
+            </p>
+          </div>
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <Block
-            title="Strength Pillars"
-            items={[
-              "AI-Driven Ideation Systems",
-              "Reels Creative Design (Hook → Value → CTA)",
-              "Messaging Funnel Architecture",
-              "Cross-Functional Alignment",
-              "Behavioral Signal Interpretation",
-            ]}
-          />
-          <Block
-            title="Signature Outputs"
-            items={[
-              "Idea systems across formats",
-              "Short-form prototypes",
-              "Content journey maps",
-              "Creative blocker diagnosis",
-              "Narrative decks & frameworks",
-            ]}
-          />
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 className="text-lg font-semibold">Strength Pillars</h3>
+            <ul className="mt-3 space-y-2 text-neutral-300">
+              <li>• AI-Driven Ideation Systems</li>
+              <li>• Reels Creative Design (Hook → Value → CTA)</li>
+              <li>• Messaging Funnel Architecture</li>
+              <li>• Cross-Functional Alignment</li>
+              <li>• Behavioral Signal Interpretation</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 className="text-lg font-semibold">Signature Outputs</h3>
+            <ul className="mt-3 space-y-2 text-neutral-300">
+              <li>• Idea systems across formats</li>
+              <li>• Short-form prototypes</li>
+              <li>• Content journey maps</li>
+              <li>• Creative blocker diagnosis</li>
+              <li>• Narrative decks & frameworks</li>
+            </ul>
+          </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Case Study 1 */}
-      <CaseStudy
-        id="case1"
-        number="01"
-        industry="Retail — Multi-Location Restaurant Brand"
-        title="AI-Powered Reels Performance System"
-        context="Increase discovery, clarify product perception, and standardize creative across locations."
-        blockers={[
-          "Inconsistent visuals / messaging across locations",
-          "Unstructured Reels content",
-          "No repeatable hook/CTA system",
-        ]}
-        insights={[
-          "POV product sequences held attention longer",
-          "Ingredient-forward visuals drove replays",
-          "Comment questions exposed clarity gaps",
-        ]}
-        solution={[
-          "3-Tier Reels System (Hooks → Value → CTA)",
-          "LLM loop to generate + filter hook variants",
-          "CTA modularity by location and offer",
-        ]}
-        prototypes={[
-          "Reel: “Show Me the Crunch” — texture hook → assembly value → “Find nearest location” CTA",
-          "Reel: “Ingredient Reveal” — chef-sprinkle hook → lineup value → “Order pickup” CTA",
-        ]}
-        learning={[
-          "Faster creative production",
-          "Unified visual grammar",
-          "Improved 0–3s retention",
-        ]}
-      />
-
-      {/* Case Study 2 */}
-      <CaseStudy
-        id="case2"
-        number="02"
-        industry="E-Commerce — DTC Brand"
-        title="Messaging Funnel & Content Journey Design"
-        context="Reduce confusion, map the journey, and fix add-to-cart drop-offs."
-        blockers={[
-          "Users unclear on value props",
-          "Ad/product page misalignment",
-          "Weak lower-funnel storytelling",
-        ]}
-        insights={[
-          "Most common hesitation: “Which one should I pick?”",
-          "Conversation clarity increased add-to-cart",
-        ]}
-        solution={[
-          "4-Stage Messaging Funnel: Curiosity → Clarity → Confidence → Conversion",
-          "Variant choice simplified into “first-order default path”",
-        ]}
-        prototypes={[
-          "Message: “What’s the difference? 10-sec breakdown.”",
-          "Message: “Most new customers start here.”",
-        ]}
-        learning={[
-          "Higher journey completion",
-          "Reduced decision friction",
-        ]}
-      />
-
-      {/* Case Study 3 */}
-      <CaseStudy
-        id="case3"
-        number="03"
-        industry="Lifestyle Consumer Brand — Apparel"
-        title="AI-Assisted Creative Scaling System"
-        context="Scale output volume while preserving brand consistency."
-        blockers={[
-          "Ideation burnout",
-          "No unified content language",
-          "Hard to scale across formats",
-        ]}
-        insights={[
-          "Try-on moments beat studio shots",
-          "Comments pointed to fit/texture curiosity",
-        ]}
-        solution={[
-          "AI content engine: Idea Generator → Format Translator → Mockup Builder",
-          "System produced cross-format consistency at speed",
-        ]}
-        prototypes={[
-          "Reel: “5-Second Fit Test” — fast try-on loop → texture close-up → “Tap for colorways” CTA",
-        ]}
-        learning={[
-          "Removed ideation bottlenecks",
-          "Reduced prep time",
-        ]}
-      />
-
-      {/* Reels Scripts */}
-      <section id="scripts" className="mx-auto max-w-5xl px-6 py-10 border-t border-white/10">
+      {/* REELS SCRIPTS */}
+      <Section id="reels" className="mx-auto max-w-5xl px-6 py-10 border-t border-white/10">
         <h2 className="text-2xl font-semibold">Reels Script Pack</h2>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <Script title="Zero to Craving in 3 Seconds (Retail)" text="Tight food reveal hook → assembly value → Find nearest location CTA." />
-          <Script title="What’s the Difference? (E-Comm)" text="“Confused between two options?” hook → side-by-side value → Start with popular CTA." />
-          <Script title="Texture Check (Lifestyle)" text="Fabric stretch hook → movement test → Tap for colorways CTA." />
-          <Script title="POV: It Fits Better Than You Expected" text="POV mirror hook → close-ups → See more fits CTA." />
-          <Script title="AI-Generated Idea Loop" text="Explain AI ideation system in-Reel → prototype → More in highlights CTA." />
+          {[
+            ["Zero to Craving in 3 Seconds (Retail)", "Tight food reveal hook → assembly value → Find nearest location CTA."],
+            ["What’s the Difference? (E-Comm)", "“Confused between two options?” hook → side-by-side value → Start with popular CTA."],
+            ["Texture Check (Lifestyle)", "Fabric stretch hook → movement test → Tap for colorways CTA."],
+            ["POV: It Fits Better Than You Expected", "POV mirror hook → close-ups → See more fits CTA."],
+            ["AI-Generated Idea Loop", "Explain AI ideation system in-Reel → prototype → More in highlights CTA."],
+          ].map(([title, text]) => (
+            <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <h3 className="font-semibold">{title}</h3>
+              <p className="mt-2 text-neutral-300">{text}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      {/* How I Work */}
-      <section id="howiwork" className="mx-auto max-w-5xl px-6 py-12 border-t border-white/10">
+      {/* HOW I WORK */}
+      <Section id="howiwork" className="mx-auto max-w-5xl px-6 py-12 border-t border-white/10">
         <h2 className="text-2xl font-semibold">How I Work</h2>
         <ul className="mt-4 space-y-3 text-neutral-300">
           <li><b>Systems over one-offs:</b> build frameworks that scale across surfaces.</li>
@@ -181,87 +150,11 @@ export default function Portfolio() {
           <li><b>Fast prototyping:</b> low-fidelity drafts unlock iteration.</li>
           <li><b>AI as infrastructure:</b> idea generation + iteration backbone.</li>
         </ul>
-      </section>
+      </Section>
 
       <footer className="mx-auto max-w-5xl px-6 py-10 text-sm text-neutral-500">
         Portfolio by Anas Makouan · Toronto, ON · English/French
       </footer>
     </main>
-  );
-}
-
-function Card({ title, text }: { title: string; text: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-      <p className="text-sm text-neutral-400">{title}</p>
-      <p className="mt-2 text-lg">{text}</p>
-    </div>
-  );
-}
-
-function Block({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <ul className="mt-3 space-y-2 text-neutral-300">
-        {items.map((i) => <li key={i}>• {i}</li>)}
-      </ul>
-    </div>
-  );
-}
-
-function CaseStudy({
-  id, number, industry, title, context, blockers, insights, solution, prototypes, learning
-}: any) {
-  return (
-    <section id={id} className="mx-auto max-w-5xl px-6 py-10 border-t border-white/10">
-      <p className="text-sm text-neutral-400">CASE STUDY {number} — {industry}</p>
-      <h2 className="mt-2 text-2xl font-semibold">{title}</h2>
-
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="font-semibold">Context</h3>
-          <p className="mt-2 text-neutral-300">{context}</p>
-
-          <h3 className="mt-5 font-semibold">Creative Blockers</h3>
-          <ul className="mt-2 space-y-2 text-neutral-300">
-            {blockers.map((b: string) => <li key={b}>• {b}</li>)}
-          </ul>
-        </div>
-
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="font-semibold">Insights & Signals</h3>
-          <ul className="mt-2 space-y-2 text-neutral-300">
-            {insights.map((i: string) => <li key={i}>• {i}</li>)}
-          </ul>
-
-          <h3 className="mt-5 font-semibold">System Solution</h3>
-          <ul className="mt-2 space-y-2 text-neutral-300">
-            {solution.map((s: string) => <li key={s}>• {s}</li>)}
-          </ul>
-        </div>
-      </div>
-
-      <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
-        <h3 className="font-semibold">Prototypes</h3>
-        <ul className="mt-2 space-y-2 text-neutral-300">
-          {prototypes.map((p: string) => <li key={p}>• {p}</li>)}
-        </ul>
-
-        <h3 className="mt-5 font-semibold">Outcome & Learning</h3>
-        <ul className="mt-2 space-y-2 text-neutral-300">
-          {learning.map((l: string) => <li key={l}>• {l}</li>)}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-function Script({ title, text }: { title: string; text: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-      <h3 className="font-semibold">{title}</h3>
-      <p className="mt-2 text-neutral-300">{text}</p>
-    </div>
   );
 }
